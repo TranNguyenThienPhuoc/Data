@@ -1,0 +1,67 @@
+{
+  "$schema": "./node_modules/json-server/schema.json",
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "id": "3",
+      "title": "another title",
+      "views": 300
+    },
+    {
+      "title": "chu tu",
+      "views": "999",
+      "id": "4"
+    },
+    {
+      "title": "hgeheeh",
+      "views": "100",
+      "id": "5"
+    },
+    {
+      "id": "6",
+      "title": "cơm ",
+      "views": "200",
+      "isDeleted": true
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "postId": "1",
+      "content": "undefined",
+      "author": "Quân",
+      "isDeleted": false
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "3",
+      "postId": "6",
+      "content": "Vừa đắt vừa không ngon ",
+      "author": "ẩn danh",
+      "isDeleted": false
+    },
+    {
+      "id": "4",
+      "postId": "5",
+      "content": "hehehehe",
+      "author": "hr",
+      "isDeleted": true
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

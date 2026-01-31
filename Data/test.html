@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts & Comments Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .form-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-row {
+            display: flex;
+            align-items: flex-end;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        input[type="text"] {
+            padding: 5px;
+            margin: 5px;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 5px 15px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="submit"][value="delete"] {
+            background-color: #f44336;
+        }
+        input[type="submit"][value="delete"]:hover {
+            background-color: #da190b;
+        }
+        input[type="submit"][value="edit"] {
+            background-color: #2196F3;
+        }
+        input[type="submit"][value="edit"]:hover {
+            background-color: #0b7dda;
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Quản lý Posts</h1>
+    <div class="form-section">
+        <h2>Thêm/Sửa Post</h2>
+        <div class="form-row">
+            <div class="form-group">
+                <label>ID:</label>
+                <input type="text" id="id_txt" placeholder="Để trống khi tạo mới"/>
+            </div>
+            <div class="form-group">
+                <label>Title:</label>
+                <input type="text" id="title_txt" placeholder="Nhập title"/>
+            </div>
+            <div class="form-group">
+                <label>Views:</label>
+                <input type="text" id="view_txt" placeholder="Nhập số views"/>
+            </div>
+        </div>
+        <input type="submit" value="Lưu Post" onclick="Save()"/>
+    </div>
+
+    <div>
+        <h2>Danh sách Posts</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Views</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <h1>Quản lý Comments</h1>
+    <div class="form-section">
+        <h2>Thêm/Sửa Comment</h2>
+        <div class="form-group">
+            <label>ID:</label>
+            <input type="text" id="comment_id_txt" placeholder="Để trống khi tạo mới"/>
+        </div>
+        <div class="form-group">
+            <label>Post ID:</label>
+            <input type="text" id="comment_postId_txt" placeholder="Nhập Post ID"/>
+        </div>
+        <div class="form-group">
+            <label>Content:</label>
+            <input type="text" id="comment_content_txt" placeholder="Nhập nội dung comment"/>
+        </div>
+        <div class="form-group">
+            <label>Author:</label>
+            <input type="text" id="comment_author_txt" placeholder="Nhập tên tác giả"/>
+        </div>
+        <input type="submit" value="Lưu Comment" onclick="SaveComment()"/>
+    </div>
+
+    <div>
+        <h2>Danh sách Comments</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Post ID</th>
+                    <th>Content</th>
+                    <th>Author</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="comments-body">
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
